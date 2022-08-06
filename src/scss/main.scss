@@ -1,0 +1,19 @@
+// Defaults styles.
+@import 'components/fonts';
+@import 'components/vars';
+@import 'components/typography';
+@import 'components/grid';
+
+// Theme base styles.
+@import 'components/base';
+
+// Header styles.
+@import 'header/header';
+@import 'header/menu';
+
+// Footer styles.
+@import 'footer/footer';
+@import 'footer/menu';
+
+// Other styles. Please headline each group of your custom styles, for example:
+// ACF Flexible content styles.
