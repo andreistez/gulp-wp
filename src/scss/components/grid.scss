@@ -4,15 +4,15 @@
 	padding: 0 $container-padding;
 	margin: 0 auto;
 
-	@media all and (min-width: $md) {
+	@media (min-width: $md) {
 		max-width: $container-md
 	}
 
-	@media all and (min-width: $lg) {
+	@media (min-width: $lg) {
 		max-width: $container-lg
 	}
 
-	@media all and (min-width: $xl) {
+	@media (min-width: $xl) {
 		max-width: $container-xl
 	}
 
