@@ -145,6 +145,6 @@ Pop-up system notifications are added - now you will not waste your time searchi
 <br />
 
 ### Default styles and scripts size after build
-`main.min.css` - 1.37 KB
+`main.min.css` - 1.34 KB
 <br />
 `main.min.js` - 536 B
