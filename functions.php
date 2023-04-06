@@ -7,6 +7,15 @@
  * @subpackage critick
  */
 
+/**
+ * !!! IMPORTANT !!!
+ * Please don't forget to change theme_name to your current theme name.
+ */
+define( 'THEME_NAME', 'critick' );
+define( 'THEME_URI', get_template_directory_uri() );
+define( 'THEME_DIR', get_template_directory() );
+define( 'THEME_VERSION', mt_rand() );
+
 add_action( 'after_setup_theme', 'critick_load_theme_dependencies' );
 /**
  * Theme dependencies.
@@ -14,8 +23,8 @@ add_action( 'after_setup_theme', 'critick_load_theme_dependencies' );
 function critick_load_theme_dependencies(){
 	// Register theme menus.
 	register_nav_menus( [
-		'header_menu'	=> esc_html__( 'Header Menu', 'critick' ),
-		'footer_menu'	=> esc_html__( 'Footer Menu', 'critick' )
+		'header_menu'	=> esc_html__( 'Header Menu', THEME_NAME ),
+		'footer_menu'	=> esc_html__( 'Footer Menu', THEME_NAME )
 	] );
 
 	// Please place all custom functions declarations in this file.
@@ -24,14 +33,12 @@ function critick_load_theme_dependencies(){
 
 add_action( 'init', 'critick_init_theme' );
 /**
- * Theme initalization.
+ * Theme initialization.
  */
 function critick_init_theme(){
 	// Remove extra styles and default SVG tags.
 	remove_action( 'wp_enqueue_scripts', 'wp_enqueue_global_styles' );
 	remove_action( 'wp_body_open', 'wp_global_styles_render_svg_filters' );
-
-	load_theme_textdomain( 'critick', get_stylesheet_directory() . '/languages' );
 
 	// Enable post thumbnails.
 	add_theme_support( 'post-thumbnails' );
@@ -52,14 +59,10 @@ function critick_inclusion_enqueue(){
 		wp_dequeue_style( 'wc-blocks-style' );
 	}
 
-	// Random value to prevent caching.
-	// Change to some value on production, for example: '1.0.0'.
-	$ver_num = mt_rand();
-
 	// Styles.
-	wp_enqueue_style( 'main', get_template_directory_uri() . '/static/css/main.min.css', [], $ver_num, 'all' );
+	wp_enqueue_style( 'main', THEME_URI . '/static/css/main.min.css', [], THEME_VERSION );
 
 	// Scripts.
-	wp_enqueue_script( 'scripts', get_template_directory_uri() . '/static/js/main.min.js', [], $ver_num, true );
+	wp_enqueue_script( 'scripts', THEME_URI . '/static/js/main.min.js', [], THEME_VERSION, true );
 }
 

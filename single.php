@@ -25,7 +25,7 @@ get_header();
 		 * @example
 		 * critick/includes/single/content-portfolio.php for 'portfolio' custom post type.
 		 */
-		get_template_part( 'includes/single/content', get_post_type() );
+		get_template_part( 'template-parts/single/content', get_post_type() );
 	}
 	?>
 </main>

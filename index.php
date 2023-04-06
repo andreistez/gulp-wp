@@ -20,19 +20,15 @@ get_header();
 			the_post_thumbnail( 'thumb-width' ) || ( $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ) );
 			the_title();
 
-			if ( has_excerpt() ){
-				the_excerpt();
-			}
+			if ( has_excerpt() ) the_excerpt();
 
 			echo esc_html( get_the_date( 'F j, Y' ) );
 		}
 	}	else {
-		esc_html_e( 'Posts not found.', 'critick' );
+		esc_html_e( 'Posts not found.', THEME_NAME );
 	}
 
-	if( get_next_posts_link() ){
-		next_posts_link( '' );
-	}
+	if( get_next_posts_link() ) next_posts_link( '' );
 	?>
 </main>
 

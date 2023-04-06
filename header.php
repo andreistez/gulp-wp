@@ -6,9 +6,6 @@
  * @package WordPress
  * @subpackage critick
  */
-
-// Theme URI for favicon and etc.
-$uri = get_template_directory_uri();
 ?>
 
 <!doctype html>
