@@ -19,10 +19,22 @@ export default {
 		dest	: pathDest + '/css'
 	},
 
+	scssPages	: {
+		src		: pathSrc + '/scss/pages/**/*.scss',
+		watch	: pathSrc + '/scss/pages/**/*.scss',
+		dest	: pathDest + '/css/pages'
+	},
+
 	js		: {
 		src		: pathSrc + '/js/main.js',
 		watch	: pathSrc + '/js/**/*.js',
 		dest	: pathDest + '/js'
+	},
+
+	jsPages	: {
+		src		: pathSrc + '/js/pages/**/*.js',
+		watch	: pathSrc + '/js/pages/**/*.js',
+		dest	: pathDest + '/js/pages'
 	},
 
 	img		: {
@@ -32,8 +44,8 @@ export default {
 	},
 
 	fonts	: {
-		src		: pathSrc + '/fonts/**/*.{eot,ttf,otfotc,ttc,woff,woff2,svg}',
-		watch	: pathSrc + '/fonts/**/*.{eot,ttf,otfotc,ttc,woff,woff2,svg}',
+		src		: pathSrc + '/fonts/**/*',
+		watch	: pathSrc + '/fonts/**/*',
 		dest	: pathDest + '/fonts'
 	},
 

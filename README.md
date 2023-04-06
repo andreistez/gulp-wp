@@ -75,6 +75,11 @@ Inside your `static` directory. It will appear after starting development or aft
 
 <br />
 
+#### 1.7. Put styles for specific pages in `src/scss/pages`.<br />
+Processed files will appear in `static/css/pages`.
+
+<br />
+
 #### 1.7. Gulp4 default sourcemaps added.
 
 <hr />
@@ -88,11 +93,12 @@ Inside your `static` directory. It will appear after starting development or aft
 
 <br />
 
-#### 2.2. No `jQuery` by default. But if you need it for some reasons, you can <a href="https://www.npmjs.com/package/jquery">install</a> and import it to your js files.
+#### 2.2. Gulp4 default sourcemaps added.
 
 <br />
 
-#### 2.3. Gulp4 default sourcemaps added.
+#### 2.3. Put scripts for specific pages in `src/js/pages`.<br />
+Processed files will appear in `static/js/pages`.
 
 <hr />
 <br />

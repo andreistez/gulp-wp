@@ -17,6 +17,7 @@ import gulpIf from 'gulp-if'
 // Tasks.
 import clear from './tasks/clear'
 import js from './tasks/js'
+import jsPages from './tasks/jsPages'
 import img from './tasks/img'
 import fonts from './tasks/fonts'
 
@@ -52,17 +53,38 @@ const scss = () => {
 		.pipe( browserSync.stream() )
 }
 
+const scssPages = () => {
+	return gulp.src( path.scssPages.src, { sourcemaps: app.isDev } )
+		.pipe( plumber( {
+			errorHandler: notify.onError( error => ( {
+				title	: 'ERROR IN SCSS ACF',
+				message	: error.message
+			} ) )
+		} ) )
+		.pipe( sass() )
+		.pipe( webpCss() )
+		.pipe( autoprefixer() )
+		.pipe( gulpIf( app.isProd, shorthand() ) )
+		.pipe( gulpIf( app.isProd, groupCssMediaQueries() ) )
+		.pipe( rename( { suffix: '.min' } ) )
+		.pipe( gulpIf( app.isProd, csso() ) )
+		.pipe( gulp.dest( path.scssPages.dest, { sourcemaps: app.isDev } ) )
+		.pipe( browserSync.stream() )
+}
+
 const watcher = () => {
 	gulp.watch( path.php.src ).on( 'all', browserSync.reload )
 	gulp.watch( path.scss.watch, scss )
+	gulp.watch( path.scssPages.watch, scssPages )
 	gulp.watch( path.js.watch, js ).on( 'all', browserSync.reload )
+	gulp.watch( path.jsPages.watch, jsPages ).on( 'all', browserSync.reload )
 	gulp.watch( path.img.watch, img ).on( 'all', browserSync.reload )
 	gulp.watch( path.fonts.watch, fonts ).on( 'all', browserSync.reload )
 }
 
 const build = gulp.series(
 	clear,
-	gulp.parallel( scss, js, img, fonts )
+	gulp.parallel( scss, scssPages, js, jsPages, img, fonts )
 )
 
 const dev = gulp.series(

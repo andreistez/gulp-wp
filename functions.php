@@ -7,10 +7,6 @@
  * @subpackage critick
  */
 
-/**
- * !!! IMPORTANT !!!
- * Please don't forget to change theme_name to your current theme name.
- */
 define( 'THEME_NAME', 'critick' );
 define( 'THEME_URI', get_template_directory_uri() );
 define( 'THEME_DIR', get_template_directory() );
@@ -59,10 +55,12 @@ function critick_inclusion_enqueue(){
 		wp_dequeue_style( 'wc-blocks-style' );
 	}
 
-	// Styles.
+	// Main styles & scripts.
 	wp_enqueue_style( 'main', THEME_URI . '/static/css/main.min.css', [], THEME_VERSION );
+	wp_enqueue_script( 'main', THEME_URI . '/static/js/main.min.js', [], THEME_VERSION, true );
 
-	// Scripts.
-	wp_enqueue_script( 'scripts', THEME_URI . '/static/js/main.min.js', [], THEME_VERSION, true );
+	/**
+	 * Additional pages styles & scripts below:
+	 */
 }
 
