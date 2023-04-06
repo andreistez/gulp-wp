@@ -13,7 +13,7 @@ h6, .h6 {
 h1, .h1 {
 	font-size: 32px;
 
-	@media all and (min-width: $lg) {
+	@media (min-width: $lg) {
 		font-size: 60px
 	}
 }
@@ -21,7 +21,7 @@ h1, .h1 {
 h2, .h2 {
 	font-size: 24px;
 
-	@media all and (min-width: $lg) {
+	@media (min-width: $lg) {
 		font-size: 32px
 	}
 }
@@ -33,7 +33,7 @@ h3, .h3 {
 h4, .h4 {
 	font-size: $fs-xl;
 
-	@media all and (min-width: $lg) {
+	@media (min-width: $lg) {
 		font-size: 24px
 	}
 }
