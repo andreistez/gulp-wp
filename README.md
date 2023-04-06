@@ -115,7 +115,7 @@ Inside your `static` directory. It will appear after starting development or aft
 
 <br />
 
-#### 4.1. Fonts converter by <a href="https://www.npmjs.com/package/gulp-fonter">Gulp-fonter</a>. Put local fonts into your `src/fonts/` directory.
+#### 4.1. Put local fonts into your `src/fonts/` directory. They will be moved to `static/fonts/`.
 
 <br />
 
