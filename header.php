@@ -6,6 +6,9 @@
  * @package WordPress
  * @subpackage critick
  */
+
+global $page, $paged;
+$site_description = get_bloginfo( 'description', 'display' );
 ?>
 
 <!doctype html>
@@ -21,17 +24,12 @@
 
 	<title>
 		<?php
-		global $page, $paged;
-
 		wp_title( '|', true, 'right' );
 		bloginfo( 'name' );
-		$site_description = get_bloginfo( 'description', 'display' );
 
-		if( $site_description && ( is_home() || is_front_page() ) )
-			echo " | $site_description";
+		if( $site_description && ( is_home() || is_front_page() ) ) echo " | $site_description";
 
-		if( $paged >= 2 || $page >= 2 )
-			echo ' | ' . sprintf( __( 'Page %s', 'critick' ), max( $paged, $page ) );
+		if( $paged >= 2 || $page >= 2 ) echo ' | ' . sprintf( __( 'Page %s', 'critick' ), max( $paged, $page ) );
 		?>
 	</title>
 
@@ -46,5 +44,12 @@
 
 	<div class="wrapper">
 		<header class="header">
+			<?php
+			wp_nav_menu( [
+				'theme_location'	=> 'header_menu',
+				'container'			=> 'nav',
+				'container_class'	=> 'header-nav'
+			] );
+			?>
 		</header>
 
