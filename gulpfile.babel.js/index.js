@@ -57,7 +57,7 @@ const scssPages = () => {
 	return gulp.src( path.scssPages.src, { sourcemaps: app.isDev } )
 		.pipe( plumber( {
 			errorHandler: notify.onError( error => ( {
-				title	: 'ERROR IN SCSS ACF',
+				title	: 'ERROR IN SCSS PAGES',
 				message	: error.message
 			} ) )
 		} ) )

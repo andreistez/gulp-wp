@@ -20,7 +20,7 @@ const jsPages = () => {
 	return gulp.src( path.jsPages.src, { sourcemaps: app.isDev } )
 		.pipe( plumber( {
 			errorHandler: notify.onError( error => ( {
-				title	: 'ERROR IN JAVASCRIPT ACF',
+				title	: 'ERROR IN JAVASCRIPT PAGES',
 				message	: error.message
 			} ) )
 		} ) )
