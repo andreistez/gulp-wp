@@ -6,7 +6,26 @@ export default {
 	isDev	: isDev,
 
 	webpack	: {
-		mode: isProd ? 'production' : 'development'
+		module		: {
+			rules: [
+				{
+					test: /\.js$/,
+					use: {
+						loader: 'babel-loader',
+						options: {
+							presets: ['@babel/preset-env']
+						}
+					}
+				}
+			]
+		},
+		mode		: isProd ? 'production' : 'development',
+		output		: {
+			filename: pathData => pathData.chunk.name === 'main' ? '[name].min.js' : '[name]/[name].min.js'
+		},
+		externals	: {
+			jquery: 'jQuery'
+		}
 	},
 
 	imagemin: {

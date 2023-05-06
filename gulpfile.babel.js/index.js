@@ -17,7 +17,6 @@ import gulpIf from 'gulp-if'
 // Tasks.
 import clear from './tasks/clear'
 import js from './tasks/js'
-import jsPages from './tasks/jsPages'
 import img from './tasks/img'
 import fonts from './tasks/fonts'
 
@@ -77,14 +76,13 @@ const watcher = () => {
 	gulp.watch( path.scss.watch, scss )
 	gulp.watch( path.scssPages.watch, scssPages )
 	gulp.watch( path.js.watch, js ).on( 'all', browserSync.reload )
-	gulp.watch( path.jsPages.watch, jsPages ).on( 'all', browserSync.reload )
 	gulp.watch( path.img.watch, img ).on( 'all', browserSync.reload )
 	gulp.watch( path.fonts.watch, fonts ).on( 'all', browserSync.reload )
 }
 
 const build = gulp.series(
 	clear,
-	gulp.parallel( scss, scssPages, js, jsPages, img, fonts )
+	gulp.parallel( fonts, scss, scssPages, js, img )
 )
 
 const dev = gulp.series(

@@ -3,9 +3,8 @@ import gulp from 'gulp'
 // Plugins.
 import plumber from 'gulp-plumber'
 import notify from 'gulp-notify'
-import babel from 'gulp-babel'
 import webpack from 'webpack-stream'
-import rename from 'gulp-rename'
+import named from 'vinyl-named'
 
 // Config.
 import path from '../config/path'
@@ -19,9 +18,8 @@ const js = () => {
 				message	: error.message
 			} ) )
 		} ) )
-		.pipe( babel() )
+		.pipe( named() )
 		.pipe( webpack( app.webpack ) )
-		.pipe( rename( { suffix: '.min' } ) )
 		.pipe( gulp.dest( path.js.dest, { sourcemaps: app.isDev } ) )
 }
 

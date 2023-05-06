@@ -26,15 +26,9 @@ export default {
 	},
 
 	js		: {
-		src		: pathSrc + '/js/main.js',
+		src		: [pathSrc + '/js/main.js', pathSrc + '/js/pages/**/*.js'],
 		watch	: pathSrc + '/js/**/*.js',
 		dest	: pathDest + '/js'
-	},
-
-	jsPages	: {
-		src		: pathSrc + '/js/pages/**/*.js',
-		watch	: pathSrc + '/js/pages/**/*.js',
-		dest	: pathDest + '/js/pages'
 	},
 
 	img		: {

@@ -1,6 +1,6 @@
 {
   "name": "critick",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Gulp4 & SCSS & pure JavaScript ES6+ WordPress starter theme by Andrei Stezenko (2022)",
   "main": "index.js",
   "scripts": {
@@ -14,14 +14,14 @@
   },
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.18.9",
+    "@babel/core": "^7.21.8",
     "@babel/preset-env": "^7.18.9",
-    "@babel/register": "^7.18.9",
+    "@babel/register": "^7.21.0",
+    "babel-loader": "^9.1.2",
     "browser-sync": "^2.27.10",
     "del": "^6.0.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
-    "gulp-babel": "^8.0.0",
     "gulp-csso": "^4.0.1",
     "gulp-group-css-media-queries": "^1.2.2",
     "gulp-if": "^3.0.0",
@@ -35,16 +35,12 @@
     "gulp-webp": "^4.0.1",
     "gulp-webp-css": "^1.1.0",
     "sass": "^1.54.0",
+    "vinyl-named": "^1.1.0",
     "webpack": "^5.73.0",
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {
-    "body-scroll-lock": "^3.1.5",
-    "gulp-better-rollup": "^4.0.1",
-    "gulp-uglify": "^3.0.2",
-    "rollup-plugin-babel": "^4.4.0",
-    "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-node-resolve": "^5.2.0"
+    "body-scroll-lock": "^3.1.5"
   },
   "babel": {
     "presets": [

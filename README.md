@@ -97,8 +97,8 @@ Processed files will appear in `static/css/pages`.
 
 <br />
 
-#### 2.3. Put scripts for specific pages in `src/js/pages`.<br />
-Processed files will appear in `static/js/pages`.
+#### 2.3. Put scripts for specific pages in `src/js/pages`. You can set another name for this directory.<br />
+Processed files will appear in `static/js/<source_js_file_name>/<source_js_file_name>.min.js`.
 
 <hr />
 <br />
