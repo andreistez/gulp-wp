@@ -1,0 +1,14 @@
+a {
+	display: inline-block;
+	text-decoration: none;
+	transition: color ease-out $tr;
+	cursor: pointer
+}
+
+p:not(:last-child) {
+	margin: 0 0 20px
+}
+
+b, strong {
+	font-weight: $fw-bold
+}

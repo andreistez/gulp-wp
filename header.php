@@ -3,7 +3,7 @@
 /**
  * Header default template.
  *
- * @package WordPress
+ * @package    WordPress
  * @subpackage critick
  */
 
@@ -14,13 +14,13 @@ $site_description = get_bloginfo( 'description', 'display' );
 <!doctype html>
 <html class="no-js" <?php language_attributes() ?>>
 <head>
-	<meta charset="<?php bloginfo( 'charset' ) ?>" />
-	<meta http-equiv="x-ua-compatible" content="ie=edge" />
-	<meta content="" name="description" />
-	<meta content="" name="keywords" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-	<meta content="telephone=no" name="format-detection" />
-	<meta name="HandheldFriendly" content="true" />
+	<meta charset="<?php bloginfo( 'charset' ) ?>"/>
+	<meta http-equiv="x-ua-compatible" content="ie=edge"/>
+	<meta content="" name="description"/>
+	<meta content="" name="keywords"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+	<meta content="telephone=no" name="format-detection"/>
+	<meta name="HandheldFriendly" content="true"/>
 
 	<title>
 		<?php
@@ -40,16 +40,16 @@ $site_description = get_bloginfo( 'description', 'display' );
 </head>
 
 <body <?php body_class() ?>>
-	<?php wp_body_open() ?>
+<?php wp_body_open() ?>
 
-	<div class="wrapper">
-		<header class="header">
-			<?php
-			wp_nav_menu( [
-				'theme_location'	=> 'header_menu',
-				'container'			=> 'nav',
-				'container_class'	=> 'header-nav'
-			] );
-			?>
-		</header>
+<div class="wrapper">
+	<header class="header">
+		<?php
+		wp_nav_menu( [
+			'theme_location'  => 'header_menu',
+			'container'       => 'nav',
+			'container_class' => 'header-nav'
+		] );
+		?>
+	</header>
 

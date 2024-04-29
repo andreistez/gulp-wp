@@ -1,0 +1,13 @@
+.wp-block-image {
+	margin: 10px 0
+}
+
+.wp-block-columns {
+	column-gap: 10px
+}
+
+.wp-block-column p {
+	@media (min-width: $lg) {
+		padding-right: 60px
+	}
+}

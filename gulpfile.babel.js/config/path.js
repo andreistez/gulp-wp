@@ -1,54 +1,55 @@
-const pathSrc   = './src'
-const pathDest  = './static'
+const pathSrc = './src'
+const pathDest = './static'
 
 /**
- * ! IMPORTANT - Change pathRoot value to your local domain name.
+ * !!! IMPORTANT !!!
+ * Change pathRoot value to your local domain name below.
  */
-const pathRoot = 'name.test/'
+const pathRoot = 'domain.test/'
 
 export default {
-	root	: pathRoot,
+	root: pathRoot,
 
-	php	: {
-		src	: '**/*.php'
+	php: {
+		src: '**/*.php'
 	},
 
-	scss	: {
-		src		: pathSrc + '/scss/main.scss',
-		watch	: pathSrc + '/scss/**/*.scss',
-		dest	: pathDest + '/css'
+	scss: {
+		src: pathSrc + '/scss/main.scss',
+		watch: pathSrc + '/scss/**/*.scss',
+		dest: pathDest + '/css'
 	},
 
-	scssPages	: {
-		src		: pathSrc + '/scss/pages/**/*.scss',
-		watch	: pathSrc + '/scss/pages/**/*.scss',
-		dest	: pathDest + '/css/pages'
+	scssPages: {
+		src: pathSrc + '/scss/pages/**/*.scss',
+		watch: pathSrc + '/scss/pages/**/*.scss',
+		dest: pathDest + '/css/pages'
 	},
 
-	js		: {
-		src		: [pathSrc + '/js/main.js', pathSrc + '/js/pages/**/*.js'],
-		watch	: pathSrc + '/js/**/*.js',
-		dest	: pathDest + '/js'
+	js: {
+		src: [pathSrc + '/js/main.js', pathSrc + '/js/pages/**/*.js'],
+		watch: pathSrc + '/js/**/*.js',
+		dest: pathDest + '/js'
 	},
 
-	img		: {
-		src		: pathSrc + '/img/**/*.{png,jpg,jpeg,gif,svg}',
-		watch	: pathSrc + '/img/**/*.{png,jpg,jpeg,gif,svg}',
-		dest	: pathDest + '/img'
+	img: {
+		src: pathSrc + '/img/**/*.{png,jpg,jpeg,gif,svg}',
+		watch: pathSrc + '/img/**/*.{png,jpg,jpeg,gif,svg}',
+		dest: pathDest + '/img'
 	},
 
-	fonts	: {
-		src		: pathSrc + '/fonts/**/*',
-		watch	: pathSrc + '/fonts/**/*',
-		dest	: pathDest + '/fonts'
+	fonts: {
+		src: pathSrc + '/fonts/**/*',
+		watch: pathSrc + '/fonts/**/*',
+		dest: pathDest + '/fonts'
 	},
 
-	del		: {
-		clean	: [
-			`${pathDest}/js/**/*`,
-			`${pathDest}/scss/**/*`,
-			`${pathDest}/img/**/*`,
-			`${pathDest}/fonts/**/*`
+	del: {
+		clean: [
+			`${ pathDest }/js/**/*`,
+			`${ pathDest }/scss/**/*`,
+			`${ pathDest }/img/**/*`,
+			`${ pathDest }/fonts/**/*`
 		]
 	}
 }
