@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Theme custom functions.
  * Please place all your custom functions declarations inside this file.
@@ -13,26 +12,28 @@
  */
 add_filter( 'wpcf7_autop_or_not', '__return_false' );
 
-add_filter( 'wp_check_filetype_and_ext', function( $data, $file, $filename, $mimes ){
+/**
+ * Enable SVG upload.
+ */
+add_filter( 'wp_check_filetype_and_ext', function ( $data, $file, $filename, $mimes ) {
 	$filetype = wp_check_filetype( $filename, $mimes );
+
 	return [
 		'ext'             => $filetype['ext'],
 		'type'            => $filetype['type'],
-		'proper_filename' => $data['proper_filename']
+		'proper_filename' => $data['proper_filename'],
 	];
-
 }, 10, 4 );
 
 add_filter( 'upload_mimes', 'crit_cc_mime_types' );
-function crit_cc_mime_types( $mimes ): array
-{
+function crit_cc_mime_types( $mimes ): array {
 	$mimes['svg'] = 'image/svg+xml';
+
 	return $mimes;
 }
 
 add_action( 'admin_head', 'crit_fix_svg' );
-function crit_fix_svg(): void
-{
+function crit_fix_svg(): void {
 	echo '<style>
 		.attachment-266x266, .thumbnail img {
 		     width: 100% !important;

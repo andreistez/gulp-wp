@@ -1,6 +1,6 @@
 {
   "name": "critick",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Gulp4 & SCSS & pure JavaScript ES6+ WordPress starter theme by Andrei Stezenko (2024)",
   "main": "index.js",
   "scripts": {
@@ -45,5 +45,8 @@
   },
   "browserslist": [
     "last 3 versions"
-  ]
+  ],
+  "dependencies": {
+    "vanilla-lazyload": "^19.1.3"
+  }
 }

@@ -1,0 +1,20 @@
+.c-image {
+	position: relative;
+	display: block;
+	overflow: hidden;
+
+	img {
+		display: block;
+		width: 100%;
+		height: auto;
+
+		&.js-lazy {
+			opacity: 0;
+			transition: opacity ease-in-out $tr;
+
+			&.loaded {
+				opacity: 1
+			}
+		}
+	}
+}

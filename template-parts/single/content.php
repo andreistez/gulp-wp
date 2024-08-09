@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Single post content.
  *
@@ -8,7 +7,9 @@
  */
 
 // If this is NOT single post page - do nothing.
-if( ! is_singular( 'post' ) ) return;
+if ( ! is_singular( 'post' ) ) {
+	return;
+}
 ?>
 
 <article class="post-single post-<?php echo esc_attr( get_the_ID() ) ?>">
